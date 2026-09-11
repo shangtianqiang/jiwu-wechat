@@ -1,0 +1,133 @@
+.tl-page {
+  padding: 32rpx 32rpx 40rpx;
+}
+
+.day {
+  margin-bottom: 10rpx;
+}
+.day-head {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 8rpx 20rpx;
+}
+.day-dot {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 16rpx;
+}
+.day-label {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+}
+.day-count {
+  font-size: 22rpx;
+  color: var(--text-tertiary);
+}
+
+.tl-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 22rpx 24rpx 22rpx 0;
+  margin-bottom: 18rpx;
+}
+.tl-line-wrap {
+  width: 48rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  padding-top: 40rpx;
+}
+.tl-dot {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #C9CDD4;
+  flex-shrink: 0;
+}
+.tl-line {
+  width: 2rpx;
+  flex: 1;
+  background: var(--hairline);
+  margin-top: 6rpx;
+}
+.tl-img {
+  width: 96rpx;
+  height: 96rpx;
+  flex-shrink: 0;
+  margin-right: 22rpx;
+}
+.tl-main {
+  flex: 1;
+  min-width: 0;
+}
+.tl-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+.tl-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tl-qty {
+  margin-left: 12rpx;
+  font-size: 22rpx;
+  color: var(--text-secondary);
+  background: var(--bg-sub);
+  border-radius: 8rpx;
+  padding: 2rpx 12rpx;
+  flex-shrink: 0;
+}
+.tl-sub {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 6rpx;
+}
+.tl-note {
+  color: var(--text-tertiary);
+}
+.tl-sep {
+  margin: 0 10rpx;
+  color: var(--text-tertiary);
+}
+.tl-time {
+  font-size: 22rpx;
+  color: var(--text-tertiary);
+}
+
+.empty {
+  padding: 140rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.empty-icon {
+  font-size: 88rpx;
+  margin-bottom: 30rpx;
+}
+.empty-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12rpx;
+}
+.empty-subtitle {
+  font-size: 26rpx;
+  color: var(--text-tertiary);
+  text-align: center;
+  line-height: 1.6;
+}

@@ -1,0 +1,93 @@
+/* ===== 主题变量（灰底白卡片 · 极简清爽风） ===== */
+page {
+  --bg: #F7F8FA;
+  --card: #FFFFFF;
+  --bg-sub: #F2F3F5;
+  --img-tile: #F6F7F9;
+  --text-primary: #1A1A1A;
+  --text-secondary: #8A8F99;
+  --text-tertiary: #B8BDC7;
+  --hairline: #EEF0F3;
+  --accent: #111111;
+  --positive: #2E9E63;
+  --danger: #D94040;
+  --radius: 24rpx;
+  --shadow: 0 4rpx 20rpx rgba(17, 17, 17, 0.04);
+  background: var(--bg);
+}
+
+.page-bg {
+  min-height: 100vh;
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+/* ===== 卡片 ===== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ===== 细分割线 ===== */
+.hairline {
+  height: 2rpx;
+  background: var(--hairline);
+}
+
+/* ===== 通用文字 ===== */
+.label {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  letter-spacing: 2rpx;
+}
+
+/* ===== Chip（灰底圆角） ===== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10rpx 26rpx;
+  border-radius: 14rpx;
+  background: var(--bg-sub);
+  font-size: 26rpx;
+  color: #666666;
+  white-space: nowrap;
+}
+.chip.on {
+  background: var(--accent);
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* ===== 按钮 ===== */
+.btn-primary {
+  background: var(--accent);
+  color: #FFFFFF;
+  border-radius: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 26rpx 0;
+  text-align: center;
+}
+.btn-primary.disabled { opacity: 0.4; }
+.btn-ghost {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  border: 2rpx solid #E8E8E8;
+  border-radius: 24rpx;
+  font-size: 32rpx;
+  padding: 24rpx 0;
+  text-align: center;
+}
+.btn-danger-text { color: var(--danger); }
+
+/* ===== 物品图通用（3D 实物图放白底砖上，白底产品图效果） ===== */
+.img-tile {
+  background: #FFFFFF;
+  border: 2rpx solid var(--hairline);
+  border-radius: 18rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

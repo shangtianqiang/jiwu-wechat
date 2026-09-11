@@ -1,0 +1,10 @@
+{
+  "name": "items",
+  "version": "1.0.0",
+  "description": "物记：物品表 CRUD（PostgreSQL，按 openid 隔离）",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "latest",
+    "wx-server-sdk": "latest"
+  }
+}

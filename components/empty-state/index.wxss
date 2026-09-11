@@ -1,0 +1,22 @@
+.empty {
+  padding: 140rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-icon {
+  font-size: 88rpx;
+  margin-bottom: 30rpx;
+}
+.empty-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12rpx;
+}
+.empty-subtitle {
+  font-size: 26rpx;
+  color: var(--text-tertiary);
+  text-align: center;
+  line-height: 1.6;
+}

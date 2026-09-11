@@ -1,0 +1,44 @@
+<view class="page-bg mine-page">
+  <!-- 顶部信息卡 -->
+  <view class="hero card">
+    <view class="hero-title">物记</view>
+    <view class="hero-sub">你的个人物品台账</view>
+    <view class="mode-badge {{cloudReady ? 'on' : ''}}">
+      {{cloudReady ? "云端已连接 · " + envId : "本机模式 · 待云端恢复"}}
+    </view>
+  </view>
+
+  <!-- 数据概览 -->
+  <view class="section-title">数据概览</view>
+  <view class="summary card">
+    <view class="summary-item">
+      <view class="summary-num">{{kinds}}</view>
+      <view class="summary-label">物品种类</view>
+    </view>
+    <view class="summary-div"></view>
+    <view class="summary-item">
+      <view class="summary-num">{{pieces}}</view>
+      <view class="summary-label">总件数</view>
+    </view>
+    <view class="summary-div"></view>
+    <view class="summary-item">
+      <view class="summary-num">{{imgCount}}</view>
+      <view class="summary-label">已配图</view>
+    </view>
+  </view>
+
+  <!-- 数据管理 -->
+  <view class="section-title">数据管理</view>
+  <view class="cells card">
+    <view class="cell" bindtap="onClearLocal">
+      <view class="cell-title danger">清空本机数据</view>
+      <view class="cell-arrow">›</view>
+    </view>
+    <view class="cell" bindtap="onAbout">
+      <view class="cell-title">关于物记</view>
+      <view class="cell-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="foot-note">数据存储：微信云开发 · PostgreSQL · 按账号隔离</view>
+</view>

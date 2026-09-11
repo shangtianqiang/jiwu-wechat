@@ -1,0 +1,97 @@
+<view class="page-bg edit-page">
+  <view class="form card">
+    <!-- 图片 -->
+    <view class="field">
+      <view class="field-label">图片</view>
+      <scroll-view class="img-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+        <view class="img-cell img-tile upload-cell {{uploading ? 'uploading' : ''}}" bindtap="onUploadImage">
+          <text class="upload-icon">📷</text>
+          <text class="upload-text">{{uploading ? "保存中…" : "上传"}}</text>
+        </view>
+        <view class="img-cell img-tile" wx:if="{{form.image}}">
+          <image class="img-thumb" src="{{form.image}}" mode="aspectFill" />
+          <view class="img-clear" catchtap="onClearImage">✕</view>
+        </view>
+        <view class="img-cell img-tile {{form.preset === p.key ? 'sel' : ''}}"
+              wx:for="{{presetImages}}" wx:key="key" wx:for-item="p"
+              data-key="{{p.key}}" bindtap="onPickPreset">
+          <image class="img-thumb contain" src="{{p.src}}" mode="aspectContain" />
+        </view>
+      </scroll-view>
+      <view class="img-hint">选一张代表图，或从图库挑一个，不选则按分类显示</view>
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 名称 -->
+    <view class="field">
+      <view class="field-label">名称 <text class="req">*</text></view>
+      <input class="field-input" placeholder="物品名称" placeholder-class="input-placeholder"
+             value="{{form.name}}" bindinput="onName" maxlength="30" />
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 分类 -->
+    <view class="field">
+      <view class="field-label">分类</view>
+      <view class="cats">
+        <view class="chip {{form.category === c ? 'on' : ''}}"
+              wx:for="{{categoryOptions}}" wx:key="*this" wx:for-item="c"
+              data-cat="{{c}}" bindtap="onPickCat">{{c}}</view>
+        <view class="chip {{customizing ? 'on' : ''}}" bindtap="onToggleCustom">＋ 自定义</view>
+      </view>
+      <view class="custom-row" wx:if="{{customizing}}">
+        <input class="field-input custom-input" placeholder="输入自定义分类名" placeholder-class="input-placeholder"
+               value="{{customName}}" bindinput="onCustomName" maxlength="10" />
+        <view class="chip on" bindtap="onConfirmCustom">确定</view>
+      </view>
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 数量 -->
+    <view class="field field-inline">
+      <view class="field-label">数量</view>
+      <view class="stepper">
+        <view class="step-btn" bindtap="onStepDown">－</view>
+        <input class="step-input" type="number" value="{{form.quantity}}" bindinput="onQuantity" />
+        <view class="step-btn" bindtap="onStepUp">＋</view>
+      </view>
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 存放位置 -->
+    <view class="field">
+      <view class="field-label">存放位置</view>
+      <input class="field-input" placeholder="如：卧室抽屉 / 书架第二层" placeholder-class="input-placeholder"
+             value="{{form.location}}" bindinput="onLocation" maxlength="30" />
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 备注 -->
+    <view class="field">
+      <view class="field-label">备注</view>
+      <textarea class="field-textarea" placeholder="补充信息（选填）" placeholder-class="input-placeholder"
+                value="{{form.note}}" bindinput="onNote" maxlength="200" auto-height />
+    </view>
+    <view class="hairline"></view>
+
+    <!-- 录入时间 -->
+    <view class="field field-inline">
+      <view class="field-label">录入时间</view>
+      <view class="time-pickers">
+        <picker mode="date" value="{{form.date}}" start="2000-01-01" end="2030-12-31" bindchange="onDateChange">
+          <view class="chip">{{form.date}}</view>
+        </picker>
+        <picker mode="time" value="{{form.time}}" bindchange="onTimeChange">
+          <view class="chip">{{form.time}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn-primary save-btn {{saving ? 'disabled' : ''}}" bindtap="onSave">
+    {{isEdit ? "保存修改" : "保存"}}
+  </view>
+  <view class="btn-ghost delete-btn" wx:if="{{isEdit}}" bindtap="onDelete">
+    <text class="btn-danger-text">删除该物品</text>
+  </view>
+</view>

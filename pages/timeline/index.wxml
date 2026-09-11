@@ -1,0 +1,44 @@
+<view class="page-bg tl-page">
+  <block wx:if="{{days.length > 0}}">
+    <view class="day" wx:for="{{days}}" wx:for-item="day" wx:key="key">
+      <view class="day-head">
+        <view class="day-dot"></view>
+        <view class="day-label">{{day.label}}</view>
+        <view class="day-count">{{day.items.length}} 件</view>
+      </view>
+      <view class="day-body">
+        <view class="tl-item card" wx:for="{{day.items}}" wx:key="id"
+              data-id="{{item.id}}" bindtap="onItemTap">
+          <view class="tl-line-wrap">
+            <view class="tl-dot"></view>
+            <view class="tl-line" wx:if="{{index < day.items.length - 1}}"></view>
+          </view>
+          <image class="tl-img img-tile" src="{{item.img}}" mode="aspectFill" lazy-load />
+          <view class="tl-main">
+            <view class="tl-top">
+              <text class="tl-name">{{item.name}}</text>
+              <text class="tl-qty" wx:if="{{item.quantity > 1}}">×{{item.quantity}}</text>
+            </view>
+            <view class="tl-sub" wx:if="{{item.location || item.note}}">
+              <text wx:if="{{item.location}}">{{item.location}}</text>
+              <text wx:if="{{item.location && item.note}}" class="tl-sep">·</text>
+              <text wx:if="{{item.note}}" class="tl-note">{{item.note}}</text>
+            </view>
+            <view class="tl-time">{{item.timeLabel}} 录入</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty card" wx:elif="{{!loading && !loadError}}">
+    <view class="empty-icon">🕐</view>
+    <view class="empty-title">时间线还是空的</view>
+    <view class="empty-subtitle">录入的物品会按时间显示在这里</view>
+  </view>
+  <view class="empty card" wx:elif="{{loadError}}">
+    <view class="empty-icon">⚠️</view>
+    <view class="empty-title">加载失败</view>
+    <view class="empty-subtitle">{{loadError}}</view>
+  </view>
+</view>
